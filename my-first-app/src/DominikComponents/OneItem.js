@@ -10,7 +10,8 @@ function OneItem(props) {
 }
 
 OneItem.defaultProps = {
-    checked: false
+    checked: false,
+    desc: "[UNDEFINED]"
 };
 
 export default OneItem;

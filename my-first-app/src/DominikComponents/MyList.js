@@ -10,6 +10,7 @@ function MyList() {
         <ul className="myUl">
            <OneItem desc="Go to shop"/>
            <OneItem desc="Go to dentist" checked={true}/>
+           <OneItem />
         </ul>
     );
 }
