@@ -1,18 +1,22 @@
 import React from 'react';
 import '../DominikComponents/MyList.css';
 import OneItem from "./OneItem";
+import todosData from "./todosData";
 
 
 function MyList() {
-    // TODO: pass object property to the component like
-    // coords={ {x:2, y:3} }
+    let items = getItems(todosData);
     return (
         <ul className="myUl">
-           <OneItem desc="Go to shop"/>
-           <OneItem desc="Go to dentist" checked={true}/>
-           <OneItem />
+            {items}
         </ul>
     );
+}
+
+function getItems(arr)
+{
+    // here we use arrow function (ES 6)
+    return arr.map(item => <OneItem desc={item.desc} checked={item.checked}/>)
 }
 
 export default MyList;

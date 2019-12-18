@@ -1,3 +1,7 @@
 .myUl li {
     font-weight: bold;
+    cursor: pointer;
+}
+.myUl {
+    list-style-type: none;
 }
