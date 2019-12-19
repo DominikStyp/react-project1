@@ -25,10 +25,16 @@ class OneItem extends React.Component {
         });
     }
 
-    // part of lifecycle
-    componentDidMount() {
-
-    }
+    // ---------- LIFECYCLE METHODS ----------
+    componentDidMount() {}
+    componentWillUnmount() {}
+    componentDidUpdate(prevProps, prevState, snapshot) {}
+    shouldComponentUpdate(nextProps, nextState, nextContext) {}
+    static getDerivedStateFromProps(props, state){}
+    // componentWillMount() {} DEPRECATED
+    // componentWillReceiveProps(nextProps, nextContext) {}  DEPRECATED
+    // componentWillUpdate(nextProps, nextState, nextContext) {} DEPRECATED
+    ////////////////////////////////////////////
 
     render() {
         const cName = (this.state.isChecked) ? "checked" : "unchecked" ;
