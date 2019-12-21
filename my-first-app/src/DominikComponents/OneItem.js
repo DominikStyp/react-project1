@@ -4,7 +4,6 @@ import '../DominikComponents/OneItem.css';
 class OneItem extends React.Component {
 
     constructor(props){
-
         super(props);
         this.state = {
             isChecked: this.props.checked
@@ -25,23 +24,13 @@ class OneItem extends React.Component {
         });
     }
 
-    // ---------- LIFECYCLE METHODS ----------
-    componentDidMount() {}
-    componentWillUnmount() {}
-    componentDidUpdate(prevProps, prevState, snapshot) {}
-    shouldComponentUpdate(nextProps, nextState, nextContext) {}
-    static getDerivedStateFromProps(props, state){}
-    // componentWillMount() {} DEPRECATED
-    // componentWillReceiveProps(nextProps, nextContext) {}  DEPRECATED
-    // componentWillUpdate(nextProps, nextState, nextContext) {} DEPRECATED
-    ////////////////////////////////////////////
 
     render() {
         const cName = (this.state.isChecked) ? "checked" : "unchecked" ;
         return (
             <li className={cName} onClick={this.handleLiClick} >
                 {this.props.desc}
-                <input type="checkbox" checked={this.state.isChecked} />
+                <input type="checkbox" checked={this.state.isChecked} readOnly={true} />
             </li>
         );
     }
