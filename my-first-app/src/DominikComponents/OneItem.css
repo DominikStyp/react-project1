@@ -1,5 +1,9 @@
 .checked {
     text-decoration: line-through;
+    font-weight: normal;
+    color: darkgray;
+    font-style: italic;
+
 }
 .unchecked {
 
