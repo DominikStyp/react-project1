@@ -13,6 +13,15 @@ class MyForm extends React.Component
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.mySetState = this.mySetState.bind(this);
+    }
+
+    mySetState(obj){
+        // setState is ASYNCHRONOUS function so we are sure state was updated
+        // ONLY AFTER the callback function was invoked
+        this.setState(obj, function(){
+            console.log(this.state);
+        });
     }
 
     handleChange(event){
@@ -20,15 +29,11 @@ class MyForm extends React.Component
         // http://es6-features.org/#ObjectMatchingShorthandNotation
         const {name,  value, type, checked} = event.target;
         if(type === "checkbox"){
-            // setState is ASYNCHRONOUS function so we are sure state was updated
-            // ONLY AFTER the callback function was invoked
-            this.setState(
+
+            this.mySetState(
                 {
                     [name]: checked
                 },
-                function(){
-                    console.log(this.state);
-                }
             )
         }
         else if(type === "select-multiple"){
@@ -40,26 +45,18 @@ class MyForm extends React.Component
                     result.push(opt.text); // opt.value for the value
                 }
             }
-            this.setState(
+            this.mySetState(
                 {
                     // we wrap around square brackets because in vanilla JS
                     // we can set up properties for obj like: obj[somePropertyName] = 123
                     [name]: result
-                },
-                function(){
-                    console.log(this.state);
                 }
             )
         }
         else {
-            this.setState(
+            this.mySetState(
                 {
-                    // we wrap around square brackets because in vanilla JS
-                    // we can set up properties for obj like: obj[somePropertyName] = 123
                     [name]: value
-                },
-                function(){
-                    console.log(this.state);
                 }
             )
         }
