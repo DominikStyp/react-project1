@@ -29,7 +29,6 @@ class MyForm extends React.Component
         // http://es6-features.org/#ObjectMatchingShorthandNotation
         const {name,  value, type, checked} = event.target;
         if(type === "checkbox"){
-
             this.mySetState(
                 {
                     [name]: checked
