@@ -6,8 +6,6 @@ import './App.css';
 // import MyForm from "./DominikComponents/MyForm";
 import MyFormCreatedByFormikLib from "./DominikComponents/MyFormCreatedByFormikLib";
 
-// TODO: use Formik library to make a form
-
 class App extends React.Component {
 
     constructor(){
