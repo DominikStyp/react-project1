@@ -38,7 +38,7 @@ class MyForm extends React.Component
         else if(type === "select-multiple"){
             let options = event.target.options;
             let result = [];
-            for (var i=0, iLen=options.length; i<iLen; i++) {
+            for (let i = 0, iLen = options.length; i<iLen; i++) {
                 let opt = options[i];
                 if (opt.selected) {
                     result.push(opt.text); // opt.value for the value

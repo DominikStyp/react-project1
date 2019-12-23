@@ -3,7 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 // import MyList from "./DominikComponents/MyList";
 // import People from "./DominikComponents/People";
-import MyForm from "./DominikComponents/MyForm";
+// import MyForm from "./DominikComponents/MyForm";
+import MyFormCreatedByFormikLib from "./DominikComponents/MyFormCreatedByFormikLib";
 
 // TODO: use Formik library to make a form
 
@@ -18,7 +19,7 @@ class App extends React.Component {
             <div className="App">
               <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
-               <MyForm />
+               <MyFormCreatedByFormikLib />
               </header>
             </div>
           );
