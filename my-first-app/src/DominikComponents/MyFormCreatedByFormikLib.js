@@ -10,6 +10,7 @@ class MyFormCreatedByFormikLib extends React.Component {
     }
 
     getValidationSchema(){
+        // https://github.com/jquense/yup
         let yup = require('yup');
         return yup.object().shape({
             email: yup.string().required().email(),
@@ -19,6 +20,7 @@ class MyFormCreatedByFormikLib extends React.Component {
     }
 
     render() {
+        // https://jaredpalmer.com/formik/docs/guides/validation
         return (
             <Formik
                 initialValues={{ email: '', password: '', age: 25 }}
