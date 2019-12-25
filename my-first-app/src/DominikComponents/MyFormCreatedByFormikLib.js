@@ -31,6 +31,9 @@ class MyFormCreatedByFormikLib extends React.Component {
             username: yup.string()
                 .min(2, "Username too short! Min 2 chars required")
                 .max(50, "Username too long! Max 50 chars allowed")
+                .required(),
+            interests: yup.array()
+                .min(2, "At least 2 interest is required")
                 .required()
         });
     }
@@ -58,6 +61,16 @@ class MyFormCreatedByFormikLib extends React.Component {
                         <ErrorMessage name="password" component="div" />
                         Age: <Field type="age" name="age" /><br />
                         <ErrorMessage name="age" component="div" />
+                        Interests:
+                        <Field as="select" style={{height: "100px"}} name="interests" multiple="multiple">
+                            <option value="it">IT</option>
+                            <option value="sports">Sports</option>
+                            <option value="education">Education</option>
+                            <option value="politics">Politics</option>
+                            <option value="travel">Travel</option>
+                        </Field>
+                        <br />
+                        <ErrorMessage name="interests" component="div" />
                         <button type="submit" disabled={isSubmitting}>
                             Submit
                         </button>
