@@ -13,9 +13,25 @@ class MyFormCreatedByFormikLib extends React.Component {
         // https://github.com/jquense/yup
         let yup = require('yup');
         return yup.object().shape({
-            email: yup.string().required().email(),
-            age: yup.number().positive().integer().required(),
-            password: yup.string().required()
+            email: yup
+                .string()
+                .email()
+                .required(),
+            age: yup
+                .number('Age must be a number')
+                .positive('You cant have negative number as age')
+                .integer('Age must be integer number')
+                .required(),
+            password: yup.string()
+                .min(10, "Your password is not strong enough (at least 10 chars required")
+                .matches(/[A-Z]+/, { message: 'At least 1 big letter in password required' })
+                .matches(/[a-z]+/, { message: 'At least 1 small letter in password required' })
+                .matches(/[0-9]+/, { message: 'At least 1 number character in password required' })
+                .required(),
+            username: yup.string()
+                .min(2, "Username too short! Min 2 chars required")
+                .max(50, "Username too long! Max 50 chars allowed")
+                .required()
         });
     }
 
@@ -36,6 +52,8 @@ class MyFormCreatedByFormikLib extends React.Component {
                     <Form>
                         Email: <Field type="email" name="email" /><br />
                         <ErrorMessage name="email" component="div" />
+                        Username: <Field type="username" name="username" /><br />
+                        <ErrorMessage name="username" component="div" />
                         Password: <Field type="password" name="password" /><br />
                         <ErrorMessage name="password" component="div" />
                         Age: <Field type="age" name="age" /><br />
