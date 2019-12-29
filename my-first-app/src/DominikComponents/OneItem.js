@@ -18,10 +18,16 @@ class OneItem extends React.Component {
         // WARNING! don't use this.state as previous version of state
         // it might cause errors!
         this.setState( (previousState) => {
-            return {
-                isChecked: !previousState.isChecked
+                return {
+                    isChecked: !previousState.isChecked
+                }
+            },
+            function()
+            {
+                this.props.onSelectItem( this.state.isChecked, this.props.itemId );
             }
-        });
+        );
+
     }
 
 
